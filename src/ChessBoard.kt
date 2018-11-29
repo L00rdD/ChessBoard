@@ -6,79 +6,78 @@ class ChessBoard: IChessBoard {
         val CHESSBOARD_MIN_LETTER = 'A'
     }
 
-    override val boxes = arrayOf(
+    override val boxes = mapOf(
             //Black side
-            Pair(Pawn(PawnType.ROOK, ChessSide.BLACK), Box.A8),
-            Pair(Pawn(PawnType.KNIGHT, ChessSide.BLACK), Box.B8),
-            Pair(Pawn(PawnType.BISHOP, ChessSide.BLACK), Box.C8),
-            Pair(Pawn(PawnType.QUEEN, ChessSide.BLACK), Box.D8),
+            Pair(Box.A8, Pawn(PawnType.ROOK, ChessSide.BLACK)),
+            Pair(Box.B8, Pawn(PawnType.KNIGHT, ChessSide.BLACK)),
+            Pair(Box.C8, Pawn(PawnType.BISHOP, ChessSide.BLACK)),
+            Pair(Box.D8, Pawn(PawnType.QUEEN, ChessSide.BLACK)),
             //Pair(Pawn(PawnType.KING, ChessSide.BLACK), Box.E8),
-            Pair(null, Box.E8),
-            Pair(Pawn(PawnType.BISHOP, ChessSide.BLACK), Box.F8),
-            Pair(Pawn(PawnType.KNIGHT, ChessSide.BLACK), Box.G8),
-            Pair(Pawn(PawnType.ROOK, ChessSide.BLACK), Box.H8),
-            Pair(Pawn(PawnType.PAWN, ChessSide.BLACK), Box.A7),
-            Pair(Pawn(PawnType.PAWN, ChessSide.BLACK), Box.B7),
-            Pair(Pawn(PawnType.PAWN, ChessSide.BLACK), Box.C7),
-            Pair(Pawn(PawnType.PAWN, ChessSide.BLACK), Box.D7),
-            Pair(Pawn(PawnType.PAWN, ChessSide.BLACK), Box.E7),
-            Pair(Pawn(PawnType.PAWN, ChessSide.BLACK), Box.F7),
-            Pair(Pawn(PawnType.PAWN, ChessSide.BLACK), Box.G7),
-            Pair(Pawn(PawnType.PAWN, ChessSide.BLACK), Box.H7),
+            Pair(Box.E8, null),
+            Pair(Box.F8, Pawn(PawnType.BISHOP, ChessSide.BLACK)),
+            Pair(Box.G8, Pawn(PawnType.KNIGHT, ChessSide.BLACK)),
+            Pair(Box.H8, Pawn(PawnType.ROOK, ChessSide.BLACK)),
+            Pair(Box.A7, Pawn(PawnType.PAWN, ChessSide.BLACK)),
+            Pair(Box.B7, Pawn(PawnType.PAWN, ChessSide.BLACK)),
+            Pair(Box.C7, Pawn(PawnType.PAWN, ChessSide.BLACK)),
+            Pair(Box.D7, Pawn(PawnType.PAWN, ChessSide.BLACK)),
+            Pair(Box.E7, Pawn(PawnType.PAWN, ChessSide.BLACK)),
+            Pair(Box.F7, Pawn(PawnType.PAWN, ChessSide.BLACK)),
+            Pair(Box.G7, Pawn(PawnType.PAWN, ChessSide.BLACK)),
+            Pair(Box.H7, Pawn(PawnType.PAWN, ChessSide.BLACK)),
 
             //Empty boxes
-            Pair(null, Box.A6),
-            Pair(null, Box.B6),
-            Pair(null, Box.C6),
-            Pair(null, Box.D6),
-            Pair( null, Box.E6),
-            Pair(null, Box.F6),
-            Pair(null, Box.G6),
-            Pair(null, Box.H6),
-            Pair(Pawn(PawnType.ROOK, ChessSide.WHITE), Box.A5),
-            Pair(null, Box.B5),
-            Pair(null, Box.C5),
-            Pair(null, Box.D5),
-            Pair(null, Box.E5),
-            Pair(null, Box.F5),
-            Pair(null, Box.G5),
-            Pair(null, Box.H5),
-            Pair(null, Box.A4),
-            Pair(null, Box.B4),
-            Pair(null, Box.C4),
-            Pair(null, Box.D4),
-            Pair(null, Box.E4),
-            Pair(null, Box.F4),
-            Pair(Pawn(PawnType.KING, ChessSide.BLACK), Box.G4),
-            Pair(null, Box.H4),
-            Pair(null, Box.A3),
-            Pair(null, Box.B3),
-            Pair(null, Box.C3),
-            Pair(null, Box.D3),
-            Pair(null, Box.E3),
-            Pair(null, Box.F3),
-            Pair(null, Box.G3),
-            Pair(null, Box.H3),
+            Pair(Box.A6, null),
+            Pair(Box.B6, null),
+            Pair(Box.C6, null),
+            Pair(Box.D6, null),
+            Pair(Box.E6, null),
+            Pair(Box.F6, null),
+            Pair(Box.G6, null),
+            Pair(Box.H6, null),
+            Pair(Box.A5, null),
+            Pair(Box.B5, null),
+            Pair(Box.C5, null),
+            Pair(Box.D5, null),
+            Pair(Box.E5, null),
+            Pair(Box.F5, null),
+            Pair(Box.G5, null),
+            Pair(Box.H5, null),
+            Pair(Box.A4, null),
+            Pair(Box.B4, null),
+            Pair(Box.C4, null),
+            Pair(Box.D4, null),
+            Pair(Box.E4, null),
+            Pair(Box.F4, null),
+            Pair(Box.G4, Pawn(PawnType.KING, ChessSide.BLACK)),
+            Pair(Box.H4, null),
+            Pair(Box.A3, null),
+            Pair(Box.B3, null),
+            Pair(Box.C3, null),
+            Pair(Box.D3, null),
+            Pair(Box.E3, null),
+            Pair(Box.F3, null),
+            Pair(Box.G3, null),
+            Pair(Box.H3, null),
 
             //White side
-            //Pair(Pawn(PawnType.ROOK, ChessSide.WHITE), Box.A1),
-            Pair(null, Box.A1),
-            Pair(Pawn(PawnType.KNIGHT, ChessSide.WHITE),Box.B1),
-            Pair(Pawn(PawnType.BISHOP, ChessSide.WHITE), Box.C1),
-            Pair(Pawn(PawnType.QUEEN, ChessSide.WHITE), Box.D1),
-            Pair(Pawn(PawnType.KING, ChessSide.WHITE), Box.E1),
-            Pair(Pawn(PawnType.BISHOP, ChessSide.WHITE), Box.F1),
-            Pair(Pawn(PawnType.KNIGHT, ChessSide.WHITE), Box.G1),
-            Pair(Pawn(PawnType.ROOK, ChessSide.WHITE), Box.H1),
-            Pair(Pawn(PawnType.PAWN, ChessSide.WHITE), Box.A2),
-            Pair(Pawn(PawnType.PAWN, ChessSide.WHITE), Box.B2),
-            Pair(Pawn(PawnType.PAWN, ChessSide.WHITE), Box.C2),
-            Pair(Pawn(PawnType.PAWN, ChessSide.WHITE), Box.D2),
-            Pair(Pawn(PawnType.PAWN, ChessSide.WHITE), Box.E2),
-            Pair(Pawn(PawnType.PAWN, ChessSide.WHITE), Box.F2),
+            Pair(Box.A1, Pawn(PawnType.ROOK, ChessSide.WHITE)),
+            Pair(Box.B1, Pawn(PawnType.KNIGHT, ChessSide.WHITE)),
+            Pair(Box.C1, Pawn(PawnType.BISHOP, ChessSide.WHITE)),
+            Pair(Box.D1, Pawn(PawnType.QUEEN, ChessSide.WHITE)),
+            Pair(Box.E1, Pawn(PawnType.KING, ChessSide.WHITE)),
+            Pair(Box.F1, Pawn(PawnType.BISHOP, ChessSide.WHITE)),
+            Pair(Box.G1, Pawn(PawnType.KNIGHT, ChessSide.WHITE)),
+            Pair(Box.H1, Pawn(PawnType.ROOK, ChessSide.WHITE)),
+            Pair(Box.A2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.B2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.C2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.D2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.E2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.F2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
             //Pair(Pawn(PawnType.PAWN, ChessSide.WHITE), Box.G2),
-            Pair(null, Box.G2),
-            Pair(Pawn(PawnType.PAWN, ChessSide.WHITE), Box.H2)
+            Pair(Box.G2, null),
+            Pair(Box.H2, Pawn(PawnType.PAWN, ChessSide.WHITE))
             )
     override var sidePlaying = ChessSide.WHITE
     override var playCount = 0
@@ -100,24 +99,23 @@ class ChessBoard: IChessBoard {
     }
 
     private fun getKingStatus(): KingStatus {
-        val kingPairIndex = boxes.indexOfFirst { it.first != null && it.first!!.type == PawnType.KING &&  it.first!!.side  == sidePlaying }
-        val king = boxes[kingPairIndex].first
+        val box = boxes.asIterable().first { it.value != null && it.value!!.side == sidePlaying && it.value!!.type == PawnType.KING }
+            val king = box.value
 
-        if (king == null ||!getAllMovePossibilities(getOppositeSide(king.side)).contains(boxes[kingPairIndex].second)) {
-            return KingStatus.FREE
+            if (king == null ||!getAllMovePossibilities(getOppositeSide(king.side)).contains(box.key)) {
+                return KingStatus.FREE
         }
 
-        val possibilities = getKingMovePossibilities(king, boxes[kingPairIndex].second)
+        val possibilities = getKingMovePossibilities(king, box.key)
         return if(possibilities == null || possibilities.isEmpty()) KingStatus.MAT else KingStatus.CHECKED
     }
 
     fun getPawn(box: Box): Pawn? {
-        val index = this.boxes.indexOfFirst { it.second == box }
-        return  if (index != - 1) boxes[index].first else null
+        return boxes[box]
     }
 
-    private fun getBox(pawn: Pawn): Box {
-        return boxes[this.boxes.indexOfFirst { it.first === pawn }].second
+    private fun getBox(pawn: Pawn): Box? {
+        return boxes.asIterable().firstOrNull { it.value == pawn }?.key
     }
 
     private fun isLegalPawnLinearMove(side: ChessSide, target: Int, current: Int, maxNumber: Int): Boolean {
@@ -128,13 +126,14 @@ class ChessBoard: IChessBoard {
     }
 
     public fun getMovePossibilities(pawn: Pawn): List<Box>? {
+        val box = getBox(pawn) ?: return null
         return when (pawn.type) {
-            PawnType.PAWN -> getPawnMovePossibilities(pawn ,getBox(pawn))
-            PawnType.KNIGHT -> getKnightMovePossibilities(pawn, getBox(pawn))
-            PawnType.QUEEN -> getQueenMovePossibilities(pawn, getBox(pawn))
-            PawnType.ROOK -> getRookMovePossibilities(pawn, getBox(pawn))
-            PawnType.BISHOP -> getBishopMovePossibilities(pawn, getBox(pawn))
-            PawnType.KING -> getKingMovePossibilities(pawn, getBox(pawn))
+            PawnType.PAWN -> getPawnMovePossibilities(pawn ,box)
+            PawnType.KNIGHT -> getKnightMovePossibilities(pawn, box)
+            PawnType.QUEEN -> getQueenMovePossibilities(pawn, box)
+            PawnType.ROOK -> getRookMovePossibilities(pawn, box)
+            PawnType.BISHOP -> getBishopMovePossibilities(pawn, box)
+            PawnType.KING -> getKingMovePossibilities(pawn, box)
         }
     }
 
@@ -145,10 +144,11 @@ class ChessBoard: IChessBoard {
     fun getAllMovePossibilities(side: ChessSide) : List<Box?> {
         val possibilities = mutableListOf<Box>()
         val refPawns = boxes
-                .filter { it.first != null && it.first!!.side == side }
+                .filter { it.value != null && it.value!!.side == side }
 
         refPawns.forEach {
-            val moves = getMovePossibilities(it.first!!)
+            val pawn = it.value ?: return@forEach
+            val moves = getMovePossibilities(pawn)
             if (moves != null && moves.isNotEmpty())
                 possibilities.addAll(moves.toMutableList())
         }
@@ -166,12 +166,9 @@ class ChessBoard: IChessBoard {
                     ((it.letter == box.letter - 1 || it.letter == box.letter + 1) && (it.number == box.number + 1 || it.number == box.number - 1))
         }.toMutableList()
 
-        val advPossibilities = sidesAvailableMoves?.get(getOppositeSide(pawn.side)) ?: emptyList()
-        println(advPossibilities)
-
         sides.removeIf {
             val p = getPawn(it)
-            (p != null && p.side == pawn.side) || advPossibilities.contains(it)
+            (p != null && p.side == pawn.side)
         }
 
         return sides.toList()

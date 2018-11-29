@@ -1,5 +1,5 @@
 interface IChessBoard {
-    val boxes: Array<Pair<Pawn?, Box>>
+    val boxes: Map<Box, Pawn?>
     var sidePlaying: ChessSide
     var playCount: Int
     var playsHistoric: ArrayList<Move>?
