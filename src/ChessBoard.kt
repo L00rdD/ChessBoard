@@ -1,3 +1,5 @@
+import com.github.ajalt.mordant.TermColors
+
 class ChessBoard: IChessBoard {
     companion object {
         val CHESSBOARD_MAX_NUMBER = 8
@@ -12,8 +14,7 @@ class ChessBoard: IChessBoard {
             Pair(Box.B8, Pawn(PawnType.KNIGHT, ChessSide.BLACK)),
             Pair(Box.C8, Pawn(PawnType.BISHOP, ChessSide.BLACK)),
             Pair(Box.D8, Pawn(PawnType.QUEEN, ChessSide.BLACK)),
-            //Pair(Pawn(PawnType.KING, ChessSide.BLACK), Box.E8),
-            Pair(Box.E8, null),
+            Pair(Box.E8, Pawn(PawnType.KING, ChessSide.BLACK)),
             Pair(Box.F8, Pawn(PawnType.BISHOP, ChessSide.BLACK)),
             Pair(Box.G8, Pawn(PawnType.KNIGHT, ChessSide.BLACK)),
             Pair(Box.H8, Pawn(PawnType.ROOK, ChessSide.BLACK)),
@@ -49,7 +50,7 @@ class ChessBoard: IChessBoard {
             Pair(Box.D4, null),
             Pair(Box.E4, null),
             Pair(Box.F4, null),
-            Pair(Box.G4, Pawn(PawnType.KING, ChessSide.BLACK)),
+            Pair(Box.G4, null),
             Pair(Box.H4, null),
             Pair(Box.A3, null),
             Pair(Box.B3, null),
@@ -61,6 +62,14 @@ class ChessBoard: IChessBoard {
             Pair(Box.H3, null),
 
             //White side
+            Pair(Box.A2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.B2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.C2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.D2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.E2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.F2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.G2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
+            Pair(Box.H2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
             Pair(Box.A1, Pawn(PawnType.ROOK, ChessSide.WHITE)),
             Pair(Box.B1, Pawn(PawnType.KNIGHT, ChessSide.WHITE)),
             Pair(Box.C1, Pawn(PawnType.BISHOP, ChessSide.WHITE)),
@@ -68,38 +77,37 @@ class ChessBoard: IChessBoard {
             Pair(Box.E1, Pawn(PawnType.KING, ChessSide.WHITE)),
             Pair(Box.F1, Pawn(PawnType.BISHOP, ChessSide.WHITE)),
             Pair(Box.G1, Pawn(PawnType.KNIGHT, ChessSide.WHITE)),
-            Pair(Box.H1, Pawn(PawnType.ROOK, ChessSide.WHITE)),
-            Pair(Box.A2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
-            Pair(Box.B2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
-            Pair(Box.C2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
-            Pair(Box.D2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
-            Pair(Box.E2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
-            Pair(Box.F2, Pawn(PawnType.PAWN, ChessSide.WHITE)),
-            //Pair(Pawn(PawnType.PAWN, ChessSide.WHITE), Box.G2),
-            Pair(Box.G2, null),
-            Pair(Box.H2, Pawn(PawnType.PAWN, ChessSide.WHITE))
-            )
+            Pair(Box.H1, Pawn(PawnType.ROOK, ChessSide.WHITE))
+    )
     override var sidePlaying = ChessSide.WHITE
     override var playCount = 0
-    override var playsHistoric: ArrayList<Move>? = null
+    override var playsHistoric: ArrayList<Move> = arrayListOf()
     override var rooksAvailable = listOf(ChessSide.WHITE, ChessSide.BLACK)
 
     override fun getSideHistorical(side: ChessSide): ArrayList<Move>? {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun move(from: Box, to: Box) {
-        // Check if king is checked
-
-        //Reload move possibilities
+    override fun move(from: Box, to: Box): Boolean {
+        val pawn = boxes[from] ?: return false
+        val possibilities = getMovePossibilities(from)
+        if (possibilities == null || possibilities.isEmpty() || !possibilities.contains(to)) return false
+        movePawn(from, to)
+        switchSidePlaying()
+        this.playsHistoric.add(Move(pawn, from, to))
+        return true
     }
 
-    private fun getKingStatus(): KingStatus {
-        val box = boxes.asIterable().first { it.value != null && it.value!!.side == sidePlaying && it.value!!.type == PawnType.KING }
-            val king = box.value
+    fun getKingStatus(): KingStatus {
+        return getKingStatus(sidePlaying)
+    }
 
-            if (king == null ||!getAllMovePossibilities(getOppositeSide(king.side)).contains(box.key)) {
-                return KingStatus.FREE
+    override fun getKingStatus(side: ChessSide): KingStatus {
+        val box = boxes.asIterable().first { it.value != null && it.value!!.side == side && it.value!!.type == PawnType.KING }
+        val king = box.value
+
+        if (king == null ||!getAllMovePossibilities(getOppositeSide(side)).contains(box.key)) {
+            return KingStatus.FREE
         }
 
         val possibilities = getKingMovePossibilities(king, box.key)
@@ -114,15 +122,8 @@ class ChessBoard: IChessBoard {
         return boxes.asIterable().firstOrNull { it.value === pawn }?.key
     }
 
-    private fun isLegalPawnLinearMove(side: ChessSide, target: Int, current: Int, maxNumber: Int): Boolean {
-        return if (side == ChessSide.WHITE)
-            target in (current + 1)..maxNumber
-        else
-            target in maxNumber..(current - 1)
-    }
-
-    public fun getMovePossibilities(pawn: Pawn): List<Box>? {
-        val box = getBox(pawn) ?: return null
+    private fun getMovePossibilities(box: Box): List<Box>? {
+        val pawn = getPawn(box) ?: return null
         return when (pawn.type) {
             PawnType.PAWN -> getPawnMovePossibilities(pawn ,box)
             PawnType.KNIGHT -> getKnightMovePossibilities(pawn, box)
@@ -133,20 +134,35 @@ class ChessBoard: IChessBoard {
         }
     }
 
+    fun getMovesAvailables(box: Box): List<Box> {
+        val pawn = getPawn(box) ?: return emptyList()
+        val moves = getMovePossibilities(box)?.toMutableList() ?: return emptyList()
+
+        var previousBox = box
+        moves.removeIf {
+            movePawn(previousBox, box)
+            previousBox = it
+            movePawn(box, it)
+            getAllMovePossibilities(getOppositeSide(pawn.side)).contains(it)
+        }
+
+        movePawn(previousBox, box)
+
+        return moves.toList()
+    }
+
     private fun getOppositeSide(side: ChessSide): ChessSide {
         return if (side == ChessSide.WHITE) ChessSide.BLACK else ChessSide.WHITE
     }
 
-    fun getAllMovePossibilities(side: ChessSide) : List<Box?> {
+    private fun getAllMovePossibilities(side: ChessSide) : List<Box?> {
         val possibilities = mutableListOf<Box>()
         val refPawns = boxes
                 .filter { it.value != null && it.value!!.side == side }
 
         refPawns.forEach { entry ->
-            val pawn = entry.value ?: return@forEach
-            val moves = getMovePossibilities(pawn)
+            val moves = getMovePossibilities(entry.key)
             if (moves != null && moves.isNotEmpty()) {
-                println("${pawn.type} ${entry.key}: $moves")
                 moves.forEach {
                     if (!possibilities.contains(it)) {
                         possibilities.add(it)
@@ -173,21 +189,12 @@ class ChessBoard: IChessBoard {
             (p != null && p.side == pawn.side)
         }
 
-        var previousBox = box
-        sides.removeIf {
-            println("--------------------------------------")
-            println("KING MOVE IN $it")
-            movePawn(previousBox, box)
-            previousBox = it
-            movePawn(box, it)
-            getAllMovePossibilities(getOppositeSide(pawn.side)).contains(it)
-        }
-
         return sides.toList()
     }
 
     private fun movePawn(from: Box, to: Box) {
         if (from == to) return
+        if (!boxes.contains(from) && !boxes.contains(to)) return
         boxes[to]= boxes[from]
         boxes[from] = null
     }
@@ -218,7 +225,9 @@ class ChessBoard: IChessBoard {
         val rook = getRookMovePossibilities(pawn, box)
         val bishop = getBishopMovePossibilities(pawn, box) ?: return rook
         if (rook == null) return bishop
-        return rook.union(bishop).toList()
+        val lines = rook.union(bishop).toMutableList()
+
+        return lines.toList()
     }
 
     private fun getBishopMovePossibilities(pawn: Pawn, box: Box): List<Box>? {
@@ -285,38 +294,52 @@ class ChessBoard: IChessBoard {
                     (southMax != null && it.letter == southMax.letter && it.number < southMax.number)
         }
 
-        return lines
+        return lines.toList()
     }
 
     private fun getPawnMovePossibilities(pawn: Pawn, pos: Box): List<Box>? {
-        val moves = Box.values().asIterable()
+        var moves = Box.values().asIterable()
 
         val linearMax = if (playsHistoric?.find { it.pawn === pawn } == null) 2 else 1
-         return moves.filter {
+        val positions = moves.filter {
              (it.letter == pos.letter && it.number <= pos.number + linearMax && it.number > pos.number && getPawn(it) == null) ||
                      (it.letter == pos.letter + 1 && it.number == pos.number + 1 && getPawn(it)?.side == getOppositeSide(pawn.side)) ||
                      (it.letter == pos.letter - 1 && it.number == pos.number + 1 && getPawn(it)?.side == getOppositeSide(pawn.side))
-         }
+         }.toMutableList()
+
+        return positions.toList()
     }
 
     override fun cancelLastMove() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        movePawn(playsHistoric.last().to, playsHistoric.last().from)
+        playsHistoric.remove(playsHistoric.last())
+        switchSidePlaying()
     }
 
     override fun switchSidePlaying() {
         this.sidePlaying = if (this.sidePlaying == ChessSide.WHITE) ChessSide.BLACK else ChessSide.WHITE
     }
 
-    override fun isKingChecked(side: ChessSide) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun isPawnUnderAttack(pawn: Pawn) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun isPawnUnderAttack(pawn: Pawn): Boolean {
+        return getAllMovePossibilities(getOppositeSide(pawn.side)).contains(getBox(pawn))
     }
 
     override fun printChessBoard() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val t = TermColors()
+        println(t.green("\n     A    B    C    D    E    F    G    H \n"))
+        boxes.forEach {
+            if (it.key.letter == 'A') print(t.green("${it.key.number}  "))
+            if (it.value == null)
+                print("|_ _|")
+            else {
+                if (it.value != null && it.value!!.side == ChessSide.WHITE)
+                    print("|_${t.white(it.value!!.type.name[0].toString())}_|")
+                else
+                    print("|_${t.red(it.value!!.type.name[0].toString())}_|")
+            }
+            if (it.key.letter == 'H') println(t.green("  ${it.key.number}"))
+        }
+        println(t.green("\n     A    B    C    D    E    F    G    H \n"))
     }
 
     override fun printHistorical() {
