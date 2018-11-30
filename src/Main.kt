@@ -1,5 +1,3 @@
-import kotlin.concurrent.fixedRateTimer
-
 fun main(args: Array<String>) {
     val chess = ChessBoard()
     chess.printChessBoard()
@@ -15,9 +13,14 @@ fun playerMove(chessboard: ChessBoard, kingStatus: KingStatus?): KingStatus {
     }
     //(1) => ask player pawn to move box
     val from = fromMoveEntry(chessboard)
+    if (from == null) {
+        chessboard.cancelLastMove()
+        chessboard.printChessBoard()
+        return playerMove(chessboard, chessboard.getKingStatus())
+    }
     // (2) => Display move possibilities for this box
-    val possibilities = chessboard.getMovesAvailables(from)
-    if (possibilities == null || possibilities.isEmpty()) {
+    val possibilities = chessboard.getMovesAvailable(from)
+    if (possibilities.isEmpty()) {
         playerMove(chessboard, kingStatus)
     }
     println(possibilities)
@@ -39,12 +42,16 @@ fun toBoxTarget(chessboard: ChessBoard, from: Box, kingStatus: KingStatus? = nul
     return toMoveEntry()
 }
 
-fun fromMoveEntry(chessboard: ChessBoard): Box {
+fun fromMoveEntry(chessboard: ChessBoard): Box? {
     var box: Box?
     var pawn: Pawn? = null
     do {
         print("Pawn in : ")
-        box = getBox(readLine() ?: "")
+        val entry = readLine() ?: ""
+        if (entry == "c") {
+            return null
+        }
+        box = getBox(entry)
         if (box != null) {
             pawn = chessboard.getPawn(box)
         }
@@ -66,11 +73,12 @@ fun toMoveEntry(): Box? {
 }
 
 fun getBox(entry: String): Box? {
-    if (entry.length != 2 || ((entry[0] < 'A' || entry[0] > 'H') && (entry[1].toString().toInt() < 1 || entry[1].toString().toInt() > 8))) {
+    val number = entry[1].toString().toIntOrNull()
+    if (entry.length != 2 || number == null || ((entry[0] < 'A' || entry[0] > 'H') && (number < 1 || number > 8))) {
         return null
     }
 
     return Box.values().firstOrNull {
-        it.letter == entry[0] && it.number == entry[1].toString().toInt()
+        it.letter == entry[0] && it.number == number
     }
 }

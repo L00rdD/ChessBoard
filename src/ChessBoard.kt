@@ -110,8 +110,23 @@ class ChessBoard: IChessBoard {
             return KingStatus.FREE
         }
 
-        val possibilities = getKingMovePossibilities(king, box.key)
-        return if(possibilities == null || possibilities.isEmpty()) KingStatus.MAT else KingStatus.CHECKED
+        val possibilities = getKingMovePossibilities(king, box.key)?.toMutableList() ?: return KingStatus.MAT
+
+        var previousBox = box.key
+        var previousContent = king
+        possibilities.removeIf {
+            movePawn(previousBox, box.key)
+            boxes[previousBox] = previousContent
+            previousBox = it
+            previousContent = getPawn(it)
+            movePawn(box.key, it)
+            (getAllMovePossibilities(getOppositeSide(side)).contains(it))
+        }
+
+        movePawn(previousBox, box.key)
+        boxes[previousBox] = previousContent
+
+        return if(possibilities.isEmpty()) KingStatus.MAT else KingStatus.CHECKED
     }
 
     fun getPawn(box: Box): Pawn? {
@@ -134,19 +149,23 @@ class ChessBoard: IChessBoard {
         }
     }
 
-    fun getMovesAvailables(box: Box): List<Box> {
+    fun getMovesAvailable(box: Box): List<Box> {
         val pawn = getPawn(box) ?: return emptyList()
         val moves = getMovePossibilities(box)?.toMutableList() ?: return emptyList()
 
         var previousBox = box
+        var previousContent = getPawn(box)
         moves.removeIf {
             movePawn(previousBox, box)
+            boxes[previousBox] = previousContent
             previousBox = it
+            previousContent = getPawn(it)
             movePawn(box, it)
             (getAllMovePossibilities(getOppositeSide(pawn.side)).contains(getKing(pawn.side)) || getKingStatus() == KingStatus.CHECKED)
         }
 
         movePawn(previousBox, box)
+        boxes[previousBox] = previousContent
 
         return moves.toList()
     }
@@ -333,6 +352,7 @@ class ChessBoard: IChessBoard {
     }
 
     override fun cancelLastMove() {
+        if (playsHistoric.isEmpty()) return
         movePawn(playsHistoric.last().to, playsHistoric.last().from)
         playsHistoric.remove(playsHistoric.last())
         switchSidePlaying()
@@ -347,6 +367,7 @@ class ChessBoard: IChessBoard {
     }
 
     override fun printChessBoard() {
+        println("\u001Bc")
         val t = TermColors()
         println(t.green("\n     A    B    C    D    E    F    G    H \n"))
         boxes.forEach {
