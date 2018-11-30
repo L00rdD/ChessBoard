@@ -143,12 +143,16 @@ class ChessBoard: IChessBoard {
             movePawn(previousBox, box)
             previousBox = it
             movePawn(box, it)
-            getAllMovePossibilities(getOppositeSide(pawn.side)).contains(it)
+            (getAllMovePossibilities(getOppositeSide(pawn.side)).contains(getKing(pawn.side)) || getKingStatus() == KingStatus.CHECKED)
         }
 
         movePawn(previousBox, box)
 
         return moves.toList()
+    }
+
+    private fun getKing(side: ChessSide): Box? {
+        return boxes.toList().firstOrNull { it.second != null && it.second!!.side == ChessSide.WHITE && it.second!!.type == PawnType.KING }?.first
     }
 
     private fun getOppositeSide(side: ChessSide): ChessSide {
@@ -300,14 +304,32 @@ class ChessBoard: IChessBoard {
     private fun getPawnMovePossibilities(pawn: Pawn, pos: Box): List<Box>? {
         var moves = Box.values().asIterable()
 
-        val linearMax = if (playsHistoric?.find { it.pawn === pawn } == null) 2 else 1
+        var linearMax = getPawnLinearFor(pawn.side, pos)
+        linearMax *= if (pawn.side == ChessSide.WHITE) 1 else -1
+        val diag = if (pawn.side == ChessSide.WHITE) 1 else -1
         val positions = moves.filter {
-             (it.letter == pos.letter && it.number <= pos.number + linearMax && it.number > pos.number && getPawn(it) == null) ||
-                     (it.letter == pos.letter + 1 && it.number == pos.number + 1 && getPawn(it)?.side == getOppositeSide(pawn.side)) ||
-                     (it.letter == pos.letter - 1 && it.number == pos.number + 1 && getPawn(it)?.side == getOppositeSide(pawn.side))
+             (it.letter == pos.letter && getPawnMaxForSide(pawn.side, linearMax, pos.number, it.number) && getPawn(it) == null) ||
+                     (it.letter == pos.letter + 1 && it.number == pos.number + diag && getPawn(it)?.side == getOppositeSide(pawn.side)) ||
+                     (it.letter == pos.letter - 1 && it.number == pos.number + diag && getPawn(it)?.side == getOppositeSide(pawn.side))
          }.toMutableList()
 
         return positions.toList()
+    }
+
+    private fun getPawnLinearFor(side: ChessSide, box: Box): Int {
+        if ((side == ChessSide.WHITE && box.number == 2) || (side == ChessSide.BLACK && box.number == 7)) {
+            return 2
+        }
+
+        return 1
+    }
+
+    private fun getPawnMaxForSide(side: ChessSide, max: Int, posNumber: Int, targetNumber: Int): Boolean {
+        if (side == ChessSide.WHITE) {
+            return targetNumber <= posNumber + max && targetNumber > posNumber
+        }
+
+        return targetNumber >= posNumber + max && targetNumber < posNumber
     }
 
     override fun cancelLastMove() {

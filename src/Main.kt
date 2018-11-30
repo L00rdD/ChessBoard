@@ -22,7 +22,10 @@ fun playerMove(chessboard: ChessBoard, kingStatus: KingStatus?): KingStatus {
     }
     println(possibilities)
     // (3) => enter to change pawn -> (1) || move to box
-    val to = toBoxTarget(chessboard, from)
+    var to: Box?
+    do {
+        to = toBoxTarget(chessboard, from)
+    } while (to == null)
     // (4) => move pawn
     if (!chessboard.move(from, to)) {
         return playerMove(chessboard, kingStatus)
@@ -32,17 +35,8 @@ fun playerMove(chessboard: ChessBoard, kingStatus: KingStatus?): KingStatus {
     return chessboard.getKingStatus()
 }
 
-fun toBoxTarget(chessboard: ChessBoard, from: Box, kingStatus: KingStatus? = null): Box {
-    val to = toMoveEntry()
-    if (to == null) {
-        playerMove(chessboard, kingStatus)
-    } else if (!(chessboard.getMovesAvailables(from) ?: emptyList()).contains(to)) {
-        chessboard.printChessBoard()
-        println("$from cannot move to $to")
-        return toBoxTarget(chessboard, from, kingStatus)
-    }
-
-    return to!!
+fun toBoxTarget(chessboard: ChessBoard, from: Box, kingStatus: KingStatus? = null): Box? {
+    return toMoveEntry()
 }
 
 fun fromMoveEntry(chessboard: ChessBoard): Box {
@@ -72,7 +66,7 @@ fun toMoveEntry(): Box? {
 }
 
 fun getBox(entry: String): Box? {
-    if(entry.length != 2 && (entry[0] < 'A' || entry[0] > 'H') && (entry[1].toString().toInt() < 1 || entry[1].toString().toInt() > 8)) {
+    if (entry.length != 2 || ((entry[0] < 'A' || entry[0] > 'H') && (entry[1].toString().toInt() < 1 || entry[1].toString().toInt() > 8))) {
         return null
     }
 
