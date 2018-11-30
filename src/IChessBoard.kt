@@ -1,5 +1,5 @@
 interface IChessBoard {
-    val boxes: Map<Box, Pawn?>
+    val boxes: MutableMap<Box, Pawn?>
     var sidePlaying: ChessSide
     var playCount: Int
     var playsHistoric: ArrayList<Move>?

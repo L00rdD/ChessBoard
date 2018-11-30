@@ -6,7 +6,7 @@ class ChessBoard: IChessBoard {
         val CHESSBOARD_MIN_LETTER = 'A'
     }
 
-    override val boxes = mapOf(
+    override val boxes = mutableMapOf(
             //Black side
             Pair(Box.A8, Pawn(PawnType.ROOK, ChessSide.BLACK)),
             Pair(Box.B8, Pawn(PawnType.KNIGHT, ChessSide.BLACK)),
@@ -84,10 +84,6 @@ class ChessBoard: IChessBoard {
     override var playsHistoric: ArrayList<Move>? = null
     override var rooksAvailable = listOf(ChessSide.WHITE, ChessSide.BLACK)
 
-    private var sidesAvailableMoves: MutableMap<ChessSide, List<Box?>>? = mutableMapOf(
-            ChessSide.WHITE to getAllMovePossibilities(ChessSide.WHITE),
-            ChessSide.BLACK to getAllMovePossibilities(ChessSide.BLACK))
-
     override fun getSideHistorical(side: ChessSide): ArrayList<Move>? {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -115,7 +111,7 @@ class ChessBoard: IChessBoard {
     }
 
     private fun getBox(pawn: Pawn): Box? {
-        return boxes.asIterable().firstOrNull { it.value == pawn }?.key
+        return boxes.asIterable().firstOrNull { it.value === pawn }?.key
     }
 
     private fun isLegalPawnLinearMove(side: ChessSide, target: Int, current: Int, maxNumber: Int): Boolean {
@@ -146,11 +142,17 @@ class ChessBoard: IChessBoard {
         val refPawns = boxes
                 .filter { it.value != null && it.value!!.side == side }
 
-        refPawns.forEach {
-            val pawn = it.value ?: return@forEach
+        refPawns.forEach { entry ->
+            val pawn = entry.value ?: return@forEach
             val moves = getMovePossibilities(pawn)
-            if (moves != null && moves.isNotEmpty())
-                possibilities.addAll(moves.toMutableList())
+            if (moves != null && moves.isNotEmpty()) {
+                println("${pawn.type} ${entry.key}: $moves")
+                moves.forEach {
+                    if (!possibilities.contains(it)) {
+                        possibilities.add(it)
+                    }
+                }
+            }
         }
 
         return possibilities
@@ -171,7 +173,23 @@ class ChessBoard: IChessBoard {
             (p != null && p.side == pawn.side)
         }
 
+        var previousBox = box
+        sides.removeIf {
+            println("--------------------------------------")
+            println("KING MOVE IN $it")
+            movePawn(previousBox, box)
+            previousBox = it
+            movePawn(box, it)
+            getAllMovePossibilities(getOppositeSide(pawn.side)).contains(it)
+        }
+
         return sides.toList()
+    }
+
+    private fun movePawn(from: Box, to: Box) {
+        if (from == to) return
+        boxes[to]= boxes[from]
+        boxes[from] = null
     }
 
     private fun getKnightMovePossibilities(pawn: Pawn, box: Box): List<Box>? {
@@ -206,7 +224,7 @@ class ChessBoard: IChessBoard {
     private fun getBishopMovePossibilities(pawn: Pawn, box: Box): List<Box>? {
         val moves = Box.values().asIterable()
         val diagonal =  moves.filter {
-            it != box && ((box.letter - it.letter == box.number - it.number)
+            ((box.letter - it.letter == box.number - it.number)
                 || (it.letter - box.letter == box.number - it.number))
         }.toMutableList()
 
@@ -228,7 +246,8 @@ class ChessBoard: IChessBoard {
             (maxUpLeft != null && it.number > maxUpLeft.number && it.letter < maxUpLeft.letter) ||
                     (maxDownLeft != null && it.number < maxDownLeft.number && it.letter < maxDownLeft.letter) ||
                     (maxUpRight != null && it.number > maxUpRight.number && it.letter > maxUpRight.letter) ||
-                    (maxDownRight != null && it.number < maxDownRight.number && it.letter > maxDownRight.letter)
+                    (maxDownRight != null && it.number < maxDownRight.number && it.letter > maxDownRight.letter) ||
+                    (it == box)
         }
 
         return diagonal
@@ -271,15 +290,13 @@ class ChessBoard: IChessBoard {
 
     private fun getPawnMovePossibilities(pawn: Pawn, pos: Box): List<Box>? {
         val moves = Box.values().asIterable()
-        val boxLinearMove = if (playsHistoric?.find { it.pawn === pawn } == null) 2 else 1
-        val boxDiagonalMove = 1
-        val boxLinearMaxNumber = if (pawn.side == ChessSide.WHITE) pos.number + boxLinearMove else pos.number - boxLinearMove
-        val boxDiagonalMaxNumber = if (pawn.side == ChessSide.WHITE) pos.number + boxDiagonalMove else pos.number - boxDiagonalMove
-        return moves.filter {
-            (it.letter == pos.letter && isLegalPawnLinearMove(pawn.side, it.number, pos.number, boxLinearMaxNumber)  && getPawn(it) == null) ||
-                    (it.letter == pos.letter.inc() && it.number ==   boxDiagonalMaxNumber && getPawn(it) != null) ||
-                    (it.letter == pos.letter.dec() && it.number == boxDiagonalMaxNumber && getPawn(it) != null)
-        }
+
+        val linearMax = if (playsHistoric?.find { it.pawn === pawn } == null) 2 else 1
+         return moves.filter {
+             (it.letter == pos.letter && it.number <= pos.number + linearMax && it.number > pos.number && getPawn(it) == null) ||
+                     (it.letter == pos.letter + 1 && it.number == pos.number + 1 && getPawn(it)?.side == getOppositeSide(pawn.side)) ||
+                     (it.letter == pos.letter - 1 && it.number == pos.number + 1 && getPawn(it)?.side == getOppositeSide(pawn.side))
+         }
     }
 
     override fun cancelLastMove() {
