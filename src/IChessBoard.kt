@@ -3,9 +3,8 @@ interface IChessBoard {
     var sidePlaying: ChessSide
     var playCount: Int
     var playsHistoric: ArrayList<Move>
-    var rooksAvailable: List<ChessSide>
 
-    fun getSideHistorical(side: ChessSide): ArrayList<Move>?
+    fun getSideHistorical(side: ChessSide): List<Move>
     fun move(from: Box, to: Box): Boolean
     fun cancelLastMove()
     fun switchSidePlaying()
