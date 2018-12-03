@@ -77,6 +77,9 @@ class ChessBoard: IChessBoard {
     override var playCount = 0
     override var playsHistoric: ArrayList<Move> = arrayListOf()
     var lastmoveIsCastling = false
+    private var lastmoveIsPassantCapture = false
+    private var doubleMovePawn: Pawn? = null
+    private var passantCapture: Box? = null
 
     override fun getSideHistorical(side: ChessSide): List<Move> {
         return playsHistoric.filter { it.pawn.side == side }
@@ -87,10 +90,41 @@ class ChessBoard: IChessBoard {
         val taken = getPawn(to)
         val possibilities = getMovePossibilities(from)
         if (possibilities == null || possibilities.isEmpty() || !possibilities.contains(to)) return false
+        checkPassantCapture(from, to)
+        setDoubleMovePawn(from, to)
         movePawn(from, to)
         switchSidePlaying()
         this.playsHistoric.add(Move(pawn, from, taken, to))
         return true
+    }
+
+    private fun checkPassantCapture(from: Box, to: Box) {
+        val pawn = getPawn(from)
+        val passant = passantCapture ?: return
+        if (pawn == null || pawn.type != PawnType.PAWN || to != passant || doubleMovePawn == null) return
+        val capture = getBox(doubleMovePawn!!) ?: return
+        boxes[capture] = null
+        lastmoveIsPassantCapture = true
+    }
+
+    private fun setDoubleMovePawn(from: Box, to: Box) {
+        this.doubleMovePawn = if (checkPawnDoubleMove(from, to)) {
+            getPawn(from)
+        } else {
+            null
+        }
+    }
+
+    private fun checkPawnDoubleMove(from: Box, to: Box): Boolean {
+        val pawn = getPawn(from)
+        if (pawn == null || pawn.type != PawnType.PAWN) return false
+        val diff = if (from.number > to.number) {
+            from.number - to.number
+        } else {
+            to.number - from.number
+        }
+        if (diff != 2) return false
+        return  true
     }
 
     fun getKingStatus(): KingStatus {
@@ -319,6 +353,7 @@ class ChessBoard: IChessBoard {
 
     private fun getPawnMovePossibilities(pawn: Pawn, pos: Box): List<Box>? {
         var moves = Box.values().asIterable()
+        val passantNumber = if (pawn.side == ChessSide.WHITE) 5 else 4
 
         var linearMax = getPawnLinearFor(pawn.side, pos)
         linearMax *= if (pawn.side == ChessSide.WHITE) 1 else -1
@@ -328,6 +363,16 @@ class ChessBoard: IChessBoard {
                      (it.letter == pos.letter + 1 && it.number == pos.number + diag && getPawn(it)?.side == getOppositeSide(pawn.side)) ||
                      (it.letter == pos.letter - 1 && it.number == pos.number + diag && getPawn(it)?.side == getOppositeSide(pawn.side))
          }.toMutableList()
+
+        if (doubleMovePawn != null && pos.number == passantNumber) {
+            val doubleBox = getBox(doubleMovePawn!!) ?: return positions.toList()
+            val posDiff = doubleBox.letter - pos.letter
+            if (posDiff == 1 || posDiff == -1) {
+                val passantBox = Box.valueOf("${pos.letter + posDiff}${pos.number + linearMax}")
+                this.passantCapture = passantBox
+                positions.add(passantBox)
+            }
+        }
 
         return positions.toList()
     }
@@ -464,6 +509,10 @@ class ChessBoard: IChessBoard {
         if (lastmoveIsCastling) {
             if(!undo()) return
             lastmoveIsCastling = false
+        }
+        if (lastmoveIsPassantCapture && passantCapture != null) {
+            lastmoveIsPassantCapture = false
+            boxes[Box.valueOf("${passantCapture!!.letter}${playsHistoric.last().from.number}")] = Pawn(PawnType.PAWN, sidePlaying)
         }
         if (!undo()) return
         switchSidePlaying()
