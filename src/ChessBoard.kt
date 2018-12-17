@@ -98,39 +98,6 @@ class ChessBoard: IChessBoard {
         return true
     }
 
-    private fun checkPassantCapture(from: Box, to: Box) {
-        val pawn = getPawn(from)
-        val passant = passantCapture ?: return
-        if (pawn == null || pawn.type != PawnType.PAWN || to != passant || doubleMovePawn == null) return
-        val capture = getBox(doubleMovePawn!!) ?: return
-        boxes[capture] = null
-        lastmoveIsPassantCapture = true
-    }
-
-    private fun setDoubleMovePawn(from: Box, to: Box) {
-        this.doubleMovePawn = if (checkPawnDoubleMove(from, to)) {
-            getPawn(from)
-        } else {
-            null
-        }
-    }
-
-    private fun checkPawnDoubleMove(from: Box, to: Box): Boolean {
-        val pawn = getPawn(from)
-        if (pawn == null || pawn.type != PawnType.PAWN) return false
-        val diff = if (from.number > to.number) {
-            from.number - to.number
-        } else {
-            to.number - from.number
-        }
-        if (diff != 2) return false
-        return  true
-    }
-
-    fun getKingStatus(): KingStatus {
-        return getKingStatus(sidePlaying)
-    }
-
     override fun getKingStatus(side: ChessSide): KingStatus {
         val box = boxes.asIterable().first { it.value != null && it.value!!.side == side && it.value!!.type == PawnType.KING }
         val king = box.value
@@ -159,24 +126,58 @@ class ChessBoard: IChessBoard {
         return if(possibilities.isEmpty()) KingStatus.MAT else KingStatus.CHECKED
     }
 
+    override fun cancelLastMove() {
+        if (lastmoveIsCastling) {
+            if(!undo()) return
+            lastmoveIsCastling = false
+        }
+        if (lastmoveIsPassantCapture && passantCapture != null) {
+            lastmoveIsPassantCapture = false
+            boxes[Box.valueOf("${passantCapture!!.letter}${playsHistoric.last().from.number}")] = Pawn(PawnType.PAWN, sidePlaying)
+        }
+        if (!undo()) return
+        switchSidePlaying()
+    }
+
+    override fun switchSidePlaying() {
+        this.sidePlaying = if (this.sidePlaying == ChessSide.WHITE) ChessSide.BLACK else ChessSide.WHITE
+    }
+
+    override fun isPawnUnderAttack(pawn: Pawn): Boolean {
+        return getAllMovePossibilities(getOppositeSide(pawn.side)).contains(getBox(pawn))
+    }
+
+    override fun printChessBoard() {
+        println("\u001Bc")
+        val t = TermColors()
+        println(t.green("\n     A    B    C    D    E    F    G    H \n"))
+        boxes.forEach {
+            if (it.key.letter == 'A') print(t.green("${it.key.number}  "))
+            if (it.value == null)
+                print("|_ _|")
+            else {
+                if (it.value != null && it.value!!.side == ChessSide.WHITE)
+                    print("|_${t.white(it.value!!.type.name[0].toString())}_|")
+                else
+                    print("|_${t.red(it.value!!.type.name[0].toString())}_|")
+            }
+            if (it.key.letter == 'H') println(t.green("  ${it.key.number}"))
+        }
+        println(t.green("\n     A    B    C    D    E    F    G    H \n"))
+    }
+
+    override fun printHistorical() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun gradePawnPosition(pawn: Pawn) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    fun getKingStatus(): KingStatus = getKingStatus(sidePlaying)
+
     fun getPawn(box: Box): Pawn? {
         return boxes[box]
-    }
-
-    private fun getBox(pawn: Pawn): Box? {
-        return boxes.asIterable().firstOrNull { it.value === pawn }?.key
-    }
-
-    private fun getMovePossibilities(box: Box): List<Box>? {
-        val pawn = getPawn(box) ?: return null
-        return when (pawn.type) {
-            PawnType.PAWN -> getPawnMovePossibilities(pawn ,box)
-            PawnType.KNIGHT -> getKnightMovePossibilities(pawn, box)
-            PawnType.QUEEN -> getQueenMovePossibilities(pawn, box)
-            PawnType.ROOK -> getRookMovePossibilities(pawn, box)
-            PawnType.BISHOP -> getBishopMovePossibilities(pawn, box)
-            PawnType.KING -> getKingMovePossibilities(pawn, box)
-        }
     }
 
     fun getMovesAvailable(box: Box): List<Box> {
@@ -198,6 +199,85 @@ class ChessBoard: IChessBoard {
         boxes[previousBox] = previousContent
 
         return moves.toList()
+    }
+
+    fun getCastling(): RookType {
+        return getCastling(sidePlaying)
+    }
+
+    fun getCastling(side: ChessSide): RookType {
+        val rookType = getCastlingsTypeAvailable(side)
+        val kingBox: Box
+        var king: Pawn? = null
+        val lineBox: Array<Box>
+
+        if (side == ChessSide.WHITE) {
+            kingBox = Box.E1
+            lineBox = arrayOf(Box.B1, Box.C1, Box.D1, Box.F1, Box.G1)
+        } else {
+            kingBox = Box.E8
+            lineBox = arrayOf(Box.B8, Box.C8, Box.D8, Box.F8, Box.G8)
+        }
+
+        king = getPawn(kingBox)
+        if (king == null) return  RookType.NONE
+
+        when(rookType) {
+            RookType.NONE -> return RookType.NONE
+            RookType.SMALL -> {
+                if (getPawn(lineBox[3]) != null && getPawn(lineBox[4]) != null) return RookType.NONE
+                return RookType.SMALL
+            }
+            RookType.BIG -> {
+                if (getPawn(lineBox[0]) != null && getPawn(lineBox[1]) != null
+                                && getPawn(lineBox[2]) != null) return RookType.NONE
+                return RookType.BIG
+            }
+            RookType.ALL -> {
+                var big = true
+                var small = true
+                if (getPawn(lineBox[3]) != null && getPawn(lineBox[4]) != null) small = false
+                if (getPawn(lineBox[0]) != null && getPawn(lineBox[1]) != null
+                        && getPawn(lineBox[2]) != null) big = false
+                if (big && small) return RookType.ALL
+                if (big) return RookType.BIG
+                if (small) return RookType.SMALL
+                return RookType.NONE
+            }
+        }
+    }
+
+    fun castling(type: RookType) {
+        return castling(sidePlaying, type)
+    }
+
+    fun castling(side: ChessSide, type: RookType) {
+        val king = getPawn(Box.E1)
+        val rook: Pawn
+        if (king == null) return
+        if (side == ChessSide.WHITE) {
+            when(type) {
+                RookType.NONE -> return
+                RookType.SMALL -> {
+                    rook = getPawn(Box.H1) ?: return
+                    movePawn(Box.E1, Box.G1)
+                    movePawn(Box.H1, Box.F1)
+                    playsHistoric.add(Move(king, Box.E1, null, Box.G1))
+                    playsHistoric.add(Move(king, Box.H1, null, Box.F1))
+                }
+                RookType.BIG -> {
+                    rook = getPawn(Box.A1) ?: return
+                    movePawn(Box.E1, Box.C1)
+                    movePawn(Box.A1, Box.D1)
+                    playsHistoric.add(Move(king, Box.E1, null, Box.C1))
+                    playsHistoric.add(Move(king, Box.A1, null, Box.D1))
+                }
+                RookType.ALL -> return
+            }
+        }
+
+        lastmoveIsCastling = true
+        switchSidePlaying()
     }
 
     private fun getKing(side: ChessSide): Box? {
@@ -288,7 +368,7 @@ class ChessBoard: IChessBoard {
         val moves = Box.values().asIterable()
         val diagonal =  moves.filter {
             ((box.letter - it.letter == box.number - it.number)
-                || (it.letter - box.letter == box.number - it.number))
+                    || (it.letter - box.letter == box.number - it.number))
         }.toMutableList()
 
         var maxUpLeft = diagonal.filter { getPawn(it) != null && it.letter < box.letter && it.number > box.number }.minBy { it.number }
@@ -359,10 +439,10 @@ class ChessBoard: IChessBoard {
         linearMax *= if (pawn.side == ChessSide.WHITE) 1 else -1
         val diag = if (pawn.side == ChessSide.WHITE) 1 else -1
         val positions = moves.filter {
-             (it.letter == pos.letter && getPawnMaxForSide(pawn.side, linearMax, pos.number, it.number) && getPawn(it) == null) ||
-                     (it.letter == pos.letter + 1 && it.number == pos.number + diag && getPawn(it)?.side == getOppositeSide(pawn.side)) ||
-                     (it.letter == pos.letter - 1 && it.number == pos.number + diag && getPawn(it)?.side == getOppositeSide(pawn.side))
-         }.toMutableList()
+            (it.letter == pos.letter && getPawnMaxForSide(pawn.side, linearMax, pos.number, it.number) && getPawn(it) == null) ||
+                    (it.letter == pos.letter + 1 && it.number == pos.number + diag && getPawn(it)?.side == getOppositeSide(pawn.side)) ||
+                    (it.letter == pos.letter - 1 && it.number == pos.number + diag && getPawn(it)?.side == getOppositeSide(pawn.side))
+        }.toMutableList()
 
         if (doubleMovePawn != null && pos.number == passantNumber) {
             val doubleBox = getBox(doubleMovePawn!!) ?: return positions.toList()
@@ -426,98 +506,6 @@ class ChessBoard: IChessBoard {
         return RookType.ALL
     }
 
-    fun getCastling(): RookType {
-        return getCastling(sidePlaying)
-    }
-
-    fun getCastling(side: ChessSide): RookType {
-        val rookType = getCastlingsTypeAvailable(side)
-        val kingBox: Box
-        var king: Pawn? = null
-        val lineBox: Array<Box>
-
-        if (side == ChessSide.WHITE) {
-            kingBox = Box.E1
-            lineBox = arrayOf(Box.B1, Box.C1, Box.D1, Box.F1, Box.G1)
-        } else {
-            kingBox = Box.E8
-            lineBox = arrayOf(Box.B8, Box.C8, Box.D8, Box.F8, Box.G8)
-        }
-
-        king = getPawn(kingBox)
-        if (king == null) return  RookType.NONE
-
-        when(rookType) {
-            RookType.NONE -> return RookType.NONE
-            RookType.SMALL -> {
-                if (getPawn(lineBox[3]) != null && getPawn(lineBox[4]) != null) return RookType.NONE
-                return RookType.SMALL
-            }
-            RookType.BIG -> {
-                if (getPawn(lineBox[0]) != null && getPawn(lineBox[1]) != null
-                                && getPawn(lineBox[2]) != null) return RookType.NONE
-                return RookType.BIG
-            }
-            RookType.ALL -> {
-                var big = true
-                var small = true
-                if (getPawn(lineBox[3]) != null && getPawn(lineBox[4]) != null) small = false
-                if (getPawn(lineBox[0]) != null && getPawn(lineBox[1]) != null
-                        && getPawn(lineBox[2]) != null) big = false
-                if (big && small) return RookType.ALL
-                if (big) return RookType.BIG
-                if (small) return RookType.SMALL
-                return RookType.NONE
-            }
-        }
-    }
-
-    fun castling(type: RookType) {
-        return castling(sidePlaying, type)
-    }
-
-    fun castling(side: ChessSide, type: RookType) {
-        val king = getPawn(Box.E1)
-        val rook: Pawn
-        if (king == null) return
-        if (side == ChessSide.WHITE) {
-            when(type) {
-                RookType.NONE -> return
-                RookType.SMALL -> {
-                    rook = getPawn(Box.H1) ?: return
-                    movePawn(Box.E1, Box.G1)
-                    movePawn(Box.H1, Box.F1)
-                    playsHistoric.add(Move(king, Box.E1, null, Box.G1))
-                    playsHistoric.add(Move(king, Box.H1, null, Box.F1))
-                }
-                RookType.BIG -> {
-                    rook = getPawn(Box.A1) ?: return
-                    movePawn(Box.E1, Box.C1)
-                    movePawn(Box.A1, Box.D1)
-                    playsHistoric.add(Move(king, Box.E1, null, Box.C1))
-                    playsHistoric.add(Move(king, Box.A1, null, Box.D1))
-                }
-                RookType.ALL -> return
-            }
-        }
-
-        lastmoveIsCastling = true
-        switchSidePlaying()
-    }
-
-    override fun cancelLastMove() {
-        if (lastmoveIsCastling) {
-            if(!undo()) return
-            lastmoveIsCastling = false
-        }
-        if (lastmoveIsPassantCapture && passantCapture != null) {
-            lastmoveIsPassantCapture = false
-            boxes[Box.valueOf("${passantCapture!!.letter}${playsHistoric.last().from.number}")] = Pawn(PawnType.PAWN, sidePlaying)
-        }
-        if (!undo()) return
-        switchSidePlaying()
-    }
-
     private fun undo(): Boolean {
         if (playsHistoric.isEmpty()) return false
         val lastMove = playsHistoric.last()
@@ -527,38 +515,59 @@ class ChessBoard: IChessBoard {
         return true
     }
 
-    override fun switchSidePlaying() {
-        this.sidePlaying = if (this.sidePlaying == ChessSide.WHITE) ChessSide.BLACK else ChessSide.WHITE
+    private fun getBox(pawn: Pawn): Box? {
+        return boxes.asIterable().firstOrNull { it.value === pawn }?.key
     }
 
-    override fun isPawnUnderAttack(pawn: Pawn): Boolean {
-        return getAllMovePossibilities(getOppositeSide(pawn.side)).contains(getBox(pawn))
-    }
-
-    override fun printChessBoard() {
-        println("\u001Bc")
-        val t = TermColors()
-        println(t.green("\n     A    B    C    D    E    F    G    H \n"))
-        boxes.forEach {
-            if (it.key.letter == 'A') print(t.green("${it.key.number}  "))
-            if (it.value == null)
-                print("|_ _|")
-            else {
-                if (it.value != null && it.value!!.side == ChessSide.WHITE)
-                    print("|_${t.white(it.value!!.type.name[0].toString())}_|")
-                else
-                    print("|_${t.red(it.value!!.type.name[0].toString())}_|")
-            }
-            if (it.key.letter == 'H') println(t.green("  ${it.key.number}"))
+    private fun getMovePossibilities(box: Box): List<Box>? {
+        val pawn = getPawn(box) ?: return null
+        return when (pawn.type) {
+            PawnType.PAWN -> getPawnMovePossibilities(pawn ,box)
+            PawnType.KNIGHT -> getKnightMovePossibilities(pawn, box)
+            PawnType.QUEEN -> getQueenMovePossibilities(pawn, box)
+            PawnType.ROOK -> getRookMovePossibilities(pawn, box)
+            PawnType.BISHOP -> getBishopMovePossibilities(pawn, box)
+            PawnType.KING -> getKingMovePossibilities(pawn, box)
         }
-        println(t.green("\n     A    B    C    D    E    F    G    H \n"))
     }
 
-    override fun printHistorical() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    private fun checkPassantCapture(from: Box, to: Box) {
+        val pawn = getPawn(from)
+        val passant = passantCapture ?: return
+        if (pawn == null || pawn.type != PawnType.PAWN || to != passant || doubleMovePawn == null) return
+        val capture = getBox(doubleMovePawn!!) ?: return
+        boxes[capture] = null
+        lastmoveIsPassantCapture = true
     }
 
-    override fun gradePawnPosition(pawn: Pawn) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    private fun setDoubleMovePawn(from: Box, to: Box) {
+        this.doubleMovePawn = if (checkPawnDoubleMove(from, to)) {
+            getPawn(from)
+        } else {
+            null
+        }
+    }
+
+    private fun getPawnsWichCanMove(): List<Pawn?> = getPawnsWichCanMove(sidePlaying)
+    
+    private fun getPawnsWichCanMove(side: ChessSide): List<Pawn?> {
+        val sideBoxes = boxes.filter { it.value != null && it.value!!.side == side }
+
+        return sideBoxes.filter {
+            val possibilities = getMovePossibilities(it.key)
+            possibilities != null && possibilities.isNotEmpty()
+        }.values.toList()
+    }
+
+    private fun checkPawnDoubleMove(from: Box, to: Box): Boolean {
+        val pawn = getPawn(from)
+        if (pawn == null || pawn.type != PawnType.PAWN) return false
+        val diff = if (from.number > to.number) {
+            from.number - to.number
+        } else {
+            to.number - from.number
+        }
+        if (diff != 2) return false
+        return  true
     }
 }

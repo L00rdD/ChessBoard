@@ -7,6 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bae7101e-22ea-4abf-9c5a-0c6b4a9720d6" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Chess.kt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChessBoard.kt" afterPath="$PROJECT_DIR$/src/ChessBoard.kt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,74 +30,106 @@
       <file leaf-file-name="ChessBoard.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ChessBoard.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="514" column="129" lean-forward="false" selection-start-line="514" selection-start-column="129" selection-end-line="514" selection-end-column="129" />
+            <state relative-caret-position="2296">
+              <caret line="551" column="4" lean-forward="true" selection-start-line="551" selection-start-column="4" selection-end-line="551" selection-end-column="4" />
               <folding>
                 <element signature="e#102#3288#0" expanded="false" />
                 <element signature="n#!!block;n#getSideHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#4747#4784#1" expanded="false" />
-                <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#move#0;n#!!block;n#ChessBoard#0" expanded="false" />
                 <element signature="n#!!block;n#getKingStatus#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#getKingStatus#1;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#5648#5694#1" expanded="false" />
-                <element signature="e#5907#6180#2" expanded="false" />
-                <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#7391#7727#2" expanded="false" />
-                <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#8448#8766#2" expanded="false" />
-                <element signature="e#8568#8756#1" expanded="false" />
-                <element signature="e#8600#8742#2" expanded="false" />
-                <element signature="e#8655#8724#1" expanded="false" />
-                <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#8962#9371#2" expanded="false" />
-                <element signature="e#9412#9502#2" expanded="false" />
-                <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#9953#10729#2" expanded="false" />
-                <element signature="e#10772#10860#2" expanded="false" />
-                <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#11403#11549#2" expanded="false" />
-                <element signature="e#12955#13436#2" expanded="false" />
-                <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#14291#14407#1" expanded="false" />
-                <element signature="e#14477#14595#1" expanded="false" />
-                <element signature="e#14665#14783#1" expanded="false" />
-                <element signature="e#14851#14967#1" expanded="false" />
-                <element signature="e#14992#15439#2" expanded="false" />
-                <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#17014#17046#1" expanded="false" />
-                <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#17216#17306#1" expanded="false" />
-                <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#17618#17716#1" expanded="false" />
-                <element signature="e#17722#17820#1" expanded="false" />
-                <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#18919#19029#1" expanded="false" />
-                <element signature="e#19035#19145#1" expanded="false" />
-                <element signature="e#19333#19487#0" expanded="false" />
-                <element signature="e#19516#19731#0" expanded="false" />
-                <element signature="e#19760#20265#0" expanded="false" />
-                <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#20548#21357#1" expanded="false" />
-                <element signature="e#20649#20955#0" expanded="false" />
-                <element signature="e#20988#21294#0" expanded="false" />
-                <element signature="e#21496#21577#1" expanded="false" />
+                <element signature="e#4860#5133#2" expanded="false" />
+                <element signature="n#!!block;n#cancelLastMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#5377#5458#1" expanded="false" />
+                <element signature="e#5523#5710#1" expanded="false" />
                 <element signature="n#!!block;n#switchSidePlaying#0;n#!!block;n#ChessBoard#0" expanded="false" />
                 <element signature="n#!!block;n#isPawnUnderAttack#0;n#!!block;n#ChessBoard#0" expanded="false" />
                 <element signature="n#!!block;n#printChessBoard#0;n#!!block;n#ChessBoard#0" expanded="false" />
-                <element signature="e#22676#23192#2" expanded="false" />
-                <element signature="e#22835#23105#1" expanded="false" />
+                <element signature="e#6270#6786#2" expanded="false" />
+                <element signature="e#6429#6699#1" expanded="false" />
                 <element signature="n#!!block;n#printHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
                 <element signature="n#!!block;n#gradePawnPosition#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#7604#7940#2" expanded="false" />
+                <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#8371#8481#1" expanded="false" />
+                <element signature="e#8487#8597#1" expanded="false" />
+                <element signature="e#8785#8939#0" expanded="false" />
+                <element signature="e#8968#9183#0" expanded="false" />
+                <element signature="e#9212#9717#0" expanded="false" />
+                <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#10000#10809#1" expanded="false" />
+                <element signature="e#10101#10407#0" expanded="false" />
+                <element signature="e#10440#10746#0" expanded="false" />
+                <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#11481#11799#2" expanded="false" />
+                <element signature="e#11601#11789#1" expanded="false" />
+                <element signature="e#11633#11775#2" expanded="false" />
+                <element signature="e#11688#11757#1" expanded="false" />
+                <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#11995#12404#2" expanded="false" />
+                <element signature="e#12445#12535#2" expanded="false" />
+                <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#12986#13762#2" expanded="false" />
+                <element signature="e#13805#13893#2" expanded="false" />
+                <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#14436#14586#2" expanded="false" />
+                <element signature="e#15992#16473#2" expanded="false" />
+                <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#17328#17444#1" expanded="false" />
+                <element signature="e#17514#17632#1" expanded="false" />
+                <element signature="e#17702#17820#1" expanded="false" />
+                <element signature="e#17888#18004#1" expanded="false" />
+                <element signature="e#18029#18476#2" expanded="false" />
+                <element signature="n#!!block;n#getPawnMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#18932#19346#2" expanded="false" />
+                <element signature="e#19431#19831#1" expanded="false" />
+                <element signature="e#19618#19821#1" expanded="false" />
+                <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#20047#20079#1" expanded="false" />
+                <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#20249#20339#1" expanded="false" />
+                <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#20651#20749#1" expanded="false" />
+                <element signature="e#20755#20853#1" expanded="false" />
+                <element signature="n#!!block;n#undo#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#getBox#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#checkPassantCapture#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#23109#23146#1" expanded="false" />
+                <element signature="e#23152#23180#1" expanded="false" />
+                <element signature="n#!!block;n#getPawnsWichCanMove#1;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+                <element signature="e#23842#23889#1" expanded="false" />
+                <element signature="e#23895#23942#1" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Maps.kt" pinned="false" current-in-tab="false">
+        <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Maps.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="424" column="39" lean-forward="false" selection-start-line="424" selection-start-column="39" selection-end-line="424" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChessSide.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ChessSide.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,8 +147,8 @@
       <file leaf-file-name="Main.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="84">
+              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
               <folding>
                 <element signature="n#!!block;n#entryToBox#0" expanded="false" />
                 <element signature="e#1699#1745#1" expanded="false" />
@@ -122,6 +156,9 @@
                 <element signature="e#2302#2368#1" expanded="false" />
                 <element signature="e#3072#3227#0" expanded="false" />
                 <element signature="e#3377#3516#0" expanded="false" />
+                <element signature="e#3551#4145#0" expanded="false" />
+                <element signature="e#4178#4768#0" expanded="false" />
+                <element signature="e#4801#5868#0" expanded="false" />
                 <element signature="e#5360#5552#1" expanded="false" />
                 <element signature="e#5600#5794#1" expanded="false" />
               </folding>
@@ -144,6 +181,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
               <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PawnType.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PawnType.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -211,13 +258,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Chess.kt" />
         <option value="$PROJECT_DIR$/src/GameInteraction.kt" />
         <option value="$PROJECT_DIR$/src/Move.kt" />
         <option value="$PROJECT_DIR$/src/RookType.kt" />
         <option value="$PROJECT_DIR$/src/IChessBoard.kt" />
         <option value="$PROJECT_DIR$/src/Box.kt" />
         <option value="$PROJECT_DIR$/src/Instruction.kt" />
+        <option value="$PROJECT_DIR$/src/Chess.kt" />
         <option value="$PROJECT_DIR$/src/Main.kt" />
         <option value="$PROJECT_DIR$/src/ChessBoard.kt" />
       </list>
@@ -285,7 +332,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -306,9 +353,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -466,12 +513,13 @@
       <workItem from="1543483912997" duration="9008000" />
       <workItem from="1543539385644" duration="10103000" />
       <workItem from="1543568736093" duration="31748000" />
-      <workItem from="1543704795689" duration="14541000" />
+      <workItem from="1543704795689" duration="14618000" />
+      <workItem from="1545035552797" duration="2170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68832000" />
+    <option name="totallyTimeSpent" value="71079000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -484,6 +532,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -498,7 +547,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24447174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24815725" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -551,11 +600,148 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="157" />
+      <option name="time" value="161" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/ChessBoard.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#102#3288#0" expanded="false" />
+            <element signature="n#!!block;n#getSideHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#move#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getKingStatus#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#4860#5133#2" expanded="false" />
+            <element signature="n#!!block;n#cancelLastMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#5377#5458#1" expanded="false" />
+            <element signature="e#5523#5710#1" expanded="false" />
+            <element signature="n#!!block;n#switchSidePlaying#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#isPawnUnderAttack#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#printChessBoard#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#6270#6786#2" expanded="false" />
+            <element signature="e#6429#6699#1" expanded="false" />
+            <element signature="n#!!block;n#printHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#gradePawnPosition#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#7604#7940#2" expanded="false" />
+            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#8371#8481#1" expanded="false" />
+            <element signature="e#8487#8597#1" expanded="false" />
+            <element signature="e#8785#8939#0" expanded="false" />
+            <element signature="e#8968#9183#0" expanded="false" />
+            <element signature="e#9212#9717#0" expanded="false" />
+            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#10000#10809#1" expanded="false" />
+            <element signature="e#10101#10407#0" expanded="false" />
+            <element signature="e#10440#10746#0" expanded="false" />
+            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11481#11799#2" expanded="false" />
+            <element signature="e#11601#11789#1" expanded="false" />
+            <element signature="e#11633#11775#2" expanded="false" />
+            <element signature="e#11688#11757#1" expanded="false" />
+            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11995#12404#2" expanded="false" />
+            <element signature="e#12445#12535#2" expanded="false" />
+            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#12986#13762#2" expanded="false" />
+            <element signature="e#13805#13893#2" expanded="false" />
+            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#14436#14586#2" expanded="false" />
+            <element signature="e#15992#16473#2" expanded="false" />
+            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#17328#17444#1" expanded="false" />
+            <element signature="e#17514#17632#1" expanded="false" />
+            <element signature="e#17702#17820#1" expanded="false" />
+            <element signature="e#17888#18004#1" expanded="false" />
+            <element signature="e#18029#18476#2" expanded="false" />
+            <element signature="n#!!block;n#getPawnMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#18932#19346#2" expanded="false" />
+            <element signature="e#19431#19831#1" expanded="false" />
+            <element signature="e#19618#19821#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20047#20079#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20249#20339#1" expanded="false" />
+            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20651#20749#1" expanded="false" />
+            <element signature="e#20755#20853#1" expanded="false" />
+            <element signature="n#!!block;n#undo#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBox#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPassantCapture#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23109#23146#1" expanded="false" />
+            <element signature="e#23152#23180#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnsWichCanMove#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23842#23889#1" expanded="false" />
+            <element signature="e#23895#23942#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Move.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#entryToBox#0" expanded="false" />
+            <element signature="e#1699#1745#1" expanded="false" />
+            <element signature="e#1989#3041#0" expanded="false" />
+            <element signature="e#2302#2368#1" expanded="false" />
+            <element signature="e#3072#3227#0" expanded="false" />
+            <element signature="e#3377#3516#0" expanded="false" />
+            <element signature="e#3551#4145#0" expanded="false" />
+            <element signature="e#4178#4768#0" expanded="false" />
+            <element signature="e#4801#5868#0" expanded="false" />
+            <element signature="e#5360#5552#1" expanded="false" />
+            <element signature="e#5600#5794#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instruction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Box.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IChessBoard.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChessBoard.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -563,68 +749,80 @@
           <folding>
             <element signature="e#102#3288#0" expanded="false" />
             <element signature="n#!!block;n#getSideHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#4747#4784#1" expanded="false" />
-            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#move#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#getKingStatus#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKingStatus#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#5648#5694#1" expanded="false" />
-            <element signature="e#5907#6180#2" expanded="false" />
-            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#7391#7727#2" expanded="false" />
-            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8448#8766#2" expanded="false" />
-            <element signature="e#8568#8756#1" expanded="false" />
-            <element signature="e#8600#8742#2" expanded="false" />
-            <element signature="e#8655#8724#1" expanded="false" />
-            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8962#9371#2" expanded="false" />
-            <element signature="e#9412#9502#2" expanded="false" />
-            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#9953#10729#2" expanded="false" />
-            <element signature="e#10772#10860#2" expanded="false" />
-            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#11403#11549#2" expanded="false" />
-            <element signature="e#12955#13436#2" expanded="false" />
-            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#14291#14407#1" expanded="false" />
-            <element signature="e#14477#14595#1" expanded="false" />
-            <element signature="e#14665#14783#1" expanded="false" />
-            <element signature="e#14851#14967#1" expanded="false" />
-            <element signature="e#14992#15439#2" expanded="false" />
-            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17014#17046#1" expanded="false" />
-            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17216#17306#1" expanded="false" />
-            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17618#17716#1" expanded="false" />
-            <element signature="e#17722#17820#1" expanded="false" />
-            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#18919#19029#1" expanded="false" />
-            <element signature="e#19035#19145#1" expanded="false" />
-            <element signature="e#19333#19487#0" expanded="false" />
-            <element signature="e#19516#19731#0" expanded="false" />
-            <element signature="e#19760#20265#0" expanded="false" />
-            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#20548#21357#1" expanded="false" />
-            <element signature="e#20649#20955#0" expanded="false" />
-            <element signature="e#20988#21294#0" expanded="false" />
-            <element signature="e#21496#21577#1" expanded="false" />
+            <element signature="e#4860#5133#2" expanded="false" />
+            <element signature="n#!!block;n#cancelLastMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#5377#5458#1" expanded="false" />
+            <element signature="e#5523#5710#1" expanded="false" />
             <element signature="n#!!block;n#switchSidePlaying#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#isPawnUnderAttack#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#printChessBoard#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#22676#23192#2" expanded="false" />
-            <element signature="e#22835#23105#1" expanded="false" />
+            <element signature="e#6270#6786#2" expanded="false" />
+            <element signature="e#6429#6699#1" expanded="false" />
             <element signature="n#!!block;n#printHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#gradePawnPosition#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#7604#7940#2" expanded="false" />
+            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#8371#8481#1" expanded="false" />
+            <element signature="e#8487#8597#1" expanded="false" />
+            <element signature="e#8785#8939#0" expanded="false" />
+            <element signature="e#8968#9183#0" expanded="false" />
+            <element signature="e#9212#9717#0" expanded="false" />
+            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#10000#10809#1" expanded="false" />
+            <element signature="e#10101#10407#0" expanded="false" />
+            <element signature="e#10440#10746#0" expanded="false" />
+            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11481#11799#2" expanded="false" />
+            <element signature="e#11601#11789#1" expanded="false" />
+            <element signature="e#11633#11775#2" expanded="false" />
+            <element signature="e#11688#11757#1" expanded="false" />
+            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11995#12404#2" expanded="false" />
+            <element signature="e#12445#12535#2" expanded="false" />
+            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#12986#13762#2" expanded="false" />
+            <element signature="e#13805#13893#2" expanded="false" />
+            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#14436#14586#2" expanded="false" />
+            <element signature="e#15992#16473#2" expanded="false" />
+            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#17328#17444#1" expanded="false" />
+            <element signature="e#17514#17632#1" expanded="false" />
+            <element signature="e#17702#17820#1" expanded="false" />
+            <element signature="e#17888#18004#1" expanded="false" />
+            <element signature="e#18029#18476#2" expanded="false" />
+            <element signature="n#!!block;n#getPawnMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#18932#19346#2" expanded="false" />
+            <element signature="e#19431#19831#1" expanded="false" />
+            <element signature="e#19618#19821#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20047#20079#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20249#20339#1" expanded="false" />
+            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20651#20749#1" expanded="false" />
+            <element signature="e#20755#20853#1" expanded="false" />
+            <element signature="n#!!block;n#undo#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBox#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPassantCapture#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23109#23146#1" expanded="false" />
+            <element signature="e#23152#23180#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnsWichCanMove#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23842#23889#1" expanded="false" />
+            <element signature="e#23895#23942#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -648,6 +846,9 @@
             <element signature="e#2302#2368#1" expanded="false" />
             <element signature="e#3072#3227#0" expanded="false" />
             <element signature="e#3377#3516#0" expanded="false" />
+            <element signature="e#3551#4145#0" expanded="false" />
+            <element signature="e#4178#4768#0" expanded="false" />
+            <element signature="e#4801#5868#0" expanded="false" />
             <element signature="e#5360#5552#1" expanded="false" />
             <element signature="e#5600#5794#1" expanded="false" />
           </folding>
@@ -669,68 +870,80 @@
           <folding>
             <element signature="e#102#3288#0" expanded="false" />
             <element signature="n#!!block;n#getSideHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#4747#4784#1" expanded="false" />
-            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#move#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#getKingStatus#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKingStatus#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#5648#5694#1" expanded="false" />
-            <element signature="e#5907#6180#2" expanded="false" />
-            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#7391#7727#2" expanded="false" />
-            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8448#8766#2" expanded="false" />
-            <element signature="e#8568#8756#1" expanded="false" />
-            <element signature="e#8600#8742#2" expanded="false" />
-            <element signature="e#8655#8724#1" expanded="false" />
-            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8962#9371#2" expanded="false" />
-            <element signature="e#9412#9502#2" expanded="false" />
-            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#9953#10729#2" expanded="false" />
-            <element signature="e#10772#10860#2" expanded="false" />
-            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#11403#11549#2" expanded="false" />
-            <element signature="e#12955#13436#2" expanded="false" />
-            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#14291#14407#1" expanded="false" />
-            <element signature="e#14477#14595#1" expanded="false" />
-            <element signature="e#14665#14783#1" expanded="false" />
-            <element signature="e#14851#14967#1" expanded="false" />
-            <element signature="e#14992#15439#2" expanded="false" />
-            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17014#17046#1" expanded="false" />
-            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17216#17306#1" expanded="false" />
-            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17618#17716#1" expanded="false" />
-            <element signature="e#17722#17820#1" expanded="false" />
-            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#18919#19029#1" expanded="false" />
-            <element signature="e#19035#19145#1" expanded="false" />
-            <element signature="e#19333#19487#0" expanded="false" />
-            <element signature="e#19516#19731#0" expanded="false" />
-            <element signature="e#19760#20265#0" expanded="false" />
-            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#20548#21357#1" expanded="false" />
-            <element signature="e#20649#20955#0" expanded="false" />
-            <element signature="e#20988#21294#0" expanded="false" />
-            <element signature="e#21496#21577#1" expanded="false" />
+            <element signature="e#4860#5133#2" expanded="false" />
+            <element signature="n#!!block;n#cancelLastMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#5377#5458#1" expanded="false" />
+            <element signature="e#5523#5710#1" expanded="false" />
             <element signature="n#!!block;n#switchSidePlaying#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#isPawnUnderAttack#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#printChessBoard#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#22676#23192#2" expanded="false" />
-            <element signature="e#22835#23105#1" expanded="false" />
+            <element signature="e#6270#6786#2" expanded="false" />
+            <element signature="e#6429#6699#1" expanded="false" />
             <element signature="n#!!block;n#printHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#gradePawnPosition#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#7604#7940#2" expanded="false" />
+            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#8371#8481#1" expanded="false" />
+            <element signature="e#8487#8597#1" expanded="false" />
+            <element signature="e#8785#8939#0" expanded="false" />
+            <element signature="e#8968#9183#0" expanded="false" />
+            <element signature="e#9212#9717#0" expanded="false" />
+            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#10000#10809#1" expanded="false" />
+            <element signature="e#10101#10407#0" expanded="false" />
+            <element signature="e#10440#10746#0" expanded="false" />
+            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11481#11799#2" expanded="false" />
+            <element signature="e#11601#11789#1" expanded="false" />
+            <element signature="e#11633#11775#2" expanded="false" />
+            <element signature="e#11688#11757#1" expanded="false" />
+            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11995#12404#2" expanded="false" />
+            <element signature="e#12445#12535#2" expanded="false" />
+            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#12986#13762#2" expanded="false" />
+            <element signature="e#13805#13893#2" expanded="false" />
+            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#14436#14586#2" expanded="false" />
+            <element signature="e#15992#16473#2" expanded="false" />
+            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#17328#17444#1" expanded="false" />
+            <element signature="e#17514#17632#1" expanded="false" />
+            <element signature="e#17702#17820#1" expanded="false" />
+            <element signature="e#17888#18004#1" expanded="false" />
+            <element signature="e#18029#18476#2" expanded="false" />
+            <element signature="n#!!block;n#getPawnMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#18932#19346#2" expanded="false" />
+            <element signature="e#19431#19831#1" expanded="false" />
+            <element signature="e#19618#19821#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20047#20079#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20249#20339#1" expanded="false" />
+            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20651#20749#1" expanded="false" />
+            <element signature="e#20755#20853#1" expanded="false" />
+            <element signature="n#!!block;n#undo#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBox#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPassantCapture#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23109#23146#1" expanded="false" />
+            <element signature="e#23152#23180#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnsWichCanMove#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23842#23889#1" expanded="false" />
+            <element signature="e#23895#23942#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -768,6 +981,9 @@
             <element signature="e#2302#2368#1" expanded="false" />
             <element signature="e#3072#3227#0" expanded="false" />
             <element signature="e#3377#3516#0" expanded="false" />
+            <element signature="e#3551#4145#0" expanded="false" />
+            <element signature="e#4178#4768#0" expanded="false" />
+            <element signature="e#4801#5868#0" expanded="false" />
             <element signature="e#5360#5552#1" expanded="false" />
             <element signature="e#5600#5794#1" expanded="false" />
           </folding>
@@ -803,68 +1019,80 @@
           <folding>
             <element signature="e#102#3288#0" expanded="false" />
             <element signature="n#!!block;n#getSideHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#4747#4784#1" expanded="false" />
-            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#move#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#getKingStatus#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKingStatus#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#5648#5694#1" expanded="false" />
-            <element signature="e#5907#6180#2" expanded="false" />
-            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#7391#7727#2" expanded="false" />
-            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8448#8766#2" expanded="false" />
-            <element signature="e#8568#8756#1" expanded="false" />
-            <element signature="e#8600#8742#2" expanded="false" />
-            <element signature="e#8655#8724#1" expanded="false" />
-            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8962#9371#2" expanded="false" />
-            <element signature="e#9412#9502#2" expanded="false" />
-            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#9953#10729#2" expanded="false" />
-            <element signature="e#10772#10860#2" expanded="false" />
-            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#11403#11549#2" expanded="false" />
-            <element signature="e#12955#13436#2" expanded="false" />
-            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#14291#14407#1" expanded="false" />
-            <element signature="e#14477#14595#1" expanded="false" />
-            <element signature="e#14665#14783#1" expanded="false" />
-            <element signature="e#14851#14967#1" expanded="false" />
-            <element signature="e#14992#15439#2" expanded="false" />
-            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17014#17046#1" expanded="false" />
-            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17216#17306#1" expanded="false" />
-            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17618#17716#1" expanded="false" />
-            <element signature="e#17722#17820#1" expanded="false" />
-            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#18919#19029#1" expanded="false" />
-            <element signature="e#19035#19145#1" expanded="false" />
-            <element signature="e#19333#19487#0" expanded="false" />
-            <element signature="e#19516#19731#0" expanded="false" />
-            <element signature="e#19760#20265#0" expanded="false" />
-            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#20548#21357#1" expanded="false" />
-            <element signature="e#20649#20955#0" expanded="false" />
-            <element signature="e#20988#21294#0" expanded="false" />
-            <element signature="e#21496#21577#1" expanded="false" />
+            <element signature="e#4860#5133#2" expanded="false" />
+            <element signature="n#!!block;n#cancelLastMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#5377#5458#1" expanded="false" />
+            <element signature="e#5523#5710#1" expanded="false" />
             <element signature="n#!!block;n#switchSidePlaying#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#isPawnUnderAttack#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#printChessBoard#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#22676#23192#2" expanded="false" />
-            <element signature="e#22835#23105#1" expanded="false" />
+            <element signature="e#6270#6786#2" expanded="false" />
+            <element signature="e#6429#6699#1" expanded="false" />
             <element signature="n#!!block;n#printHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#gradePawnPosition#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#7604#7940#2" expanded="false" />
+            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#8371#8481#1" expanded="false" />
+            <element signature="e#8487#8597#1" expanded="false" />
+            <element signature="e#8785#8939#0" expanded="false" />
+            <element signature="e#8968#9183#0" expanded="false" />
+            <element signature="e#9212#9717#0" expanded="false" />
+            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#10000#10809#1" expanded="false" />
+            <element signature="e#10101#10407#0" expanded="false" />
+            <element signature="e#10440#10746#0" expanded="false" />
+            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11481#11799#2" expanded="false" />
+            <element signature="e#11601#11789#1" expanded="false" />
+            <element signature="e#11633#11775#2" expanded="false" />
+            <element signature="e#11688#11757#1" expanded="false" />
+            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11995#12404#2" expanded="false" />
+            <element signature="e#12445#12535#2" expanded="false" />
+            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#12986#13762#2" expanded="false" />
+            <element signature="e#13805#13893#2" expanded="false" />
+            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#14436#14586#2" expanded="false" />
+            <element signature="e#15992#16473#2" expanded="false" />
+            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#17328#17444#1" expanded="false" />
+            <element signature="e#17514#17632#1" expanded="false" />
+            <element signature="e#17702#17820#1" expanded="false" />
+            <element signature="e#17888#18004#1" expanded="false" />
+            <element signature="e#18029#18476#2" expanded="false" />
+            <element signature="n#!!block;n#getPawnMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#18932#19346#2" expanded="false" />
+            <element signature="e#19431#19831#1" expanded="false" />
+            <element signature="e#19618#19821#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20047#20079#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20249#20339#1" expanded="false" />
+            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20651#20749#1" expanded="false" />
+            <element signature="e#20755#20853#1" expanded="false" />
+            <element signature="n#!!block;n#undo#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBox#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPassantCapture#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23109#23146#1" expanded="false" />
+            <element signature="e#23152#23180#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnsWichCanMove#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23842#23889#1" expanded="false" />
+            <element signature="e#23895#23942#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -880,6 +1108,9 @@
             <element signature="e#2302#2368#1" expanded="false" />
             <element signature="e#3072#3227#0" expanded="false" />
             <element signature="e#3377#3516#0" expanded="false" />
+            <element signature="e#3551#4145#0" expanded="false" />
+            <element signature="e#4178#4768#0" expanded="false" />
+            <element signature="e#4801#5868#0" expanded="false" />
             <element signature="e#5360#5552#1" expanded="false" />
             <element signature="e#5600#5794#1" expanded="false" />
           </folding>
@@ -897,6 +1128,9 @@
             <element signature="e#2302#2368#1" expanded="false" />
             <element signature="e#3072#3227#0" expanded="false" />
             <element signature="e#3377#3516#0" expanded="false" />
+            <element signature="e#3551#4145#0" expanded="false" />
+            <element signature="e#4178#4768#0" expanded="false" />
+            <element signature="e#4801#5868#0" expanded="false" />
             <element signature="e#5360#5552#1" expanded="false" />
             <element signature="e#5600#5794#1" expanded="false" />
           </folding>
@@ -910,68 +1144,80 @@
           <folding>
             <element signature="e#102#3288#0" expanded="false" />
             <element signature="n#!!block;n#getSideHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#4747#4784#1" expanded="false" />
-            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#move#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#getKingStatus#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKingStatus#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#5648#5694#1" expanded="false" />
-            <element signature="e#5907#6180#2" expanded="false" />
-            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#7391#7727#2" expanded="false" />
-            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8448#8766#2" expanded="false" />
-            <element signature="e#8568#8756#1" expanded="false" />
-            <element signature="e#8600#8742#2" expanded="false" />
-            <element signature="e#8655#8724#1" expanded="false" />
-            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8962#9371#2" expanded="false" />
-            <element signature="e#9412#9502#2" expanded="false" />
-            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#9953#10729#2" expanded="false" />
-            <element signature="e#10772#10860#2" expanded="false" />
-            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#11403#11549#2" expanded="false" />
-            <element signature="e#12955#13436#2" expanded="false" />
-            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#14291#14407#1" expanded="false" />
-            <element signature="e#14477#14595#1" expanded="false" />
-            <element signature="e#14665#14783#1" expanded="false" />
-            <element signature="e#14851#14967#1" expanded="false" />
-            <element signature="e#14992#15439#2" expanded="false" />
-            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17014#17046#1" expanded="false" />
-            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17216#17306#1" expanded="false" />
-            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17618#17716#1" expanded="false" />
-            <element signature="e#17722#17820#1" expanded="false" />
-            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#18919#19029#1" expanded="false" />
-            <element signature="e#19035#19145#1" expanded="false" />
-            <element signature="e#19333#19487#0" expanded="false" />
-            <element signature="e#19516#19731#0" expanded="false" />
-            <element signature="e#19760#20265#0" expanded="false" />
-            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#20548#21357#1" expanded="false" />
-            <element signature="e#20649#20955#0" expanded="false" />
-            <element signature="e#20988#21294#0" expanded="false" />
-            <element signature="e#21496#21577#1" expanded="false" />
+            <element signature="e#4860#5133#2" expanded="false" />
+            <element signature="n#!!block;n#cancelLastMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#5377#5458#1" expanded="false" />
+            <element signature="e#5523#5710#1" expanded="false" />
             <element signature="n#!!block;n#switchSidePlaying#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#isPawnUnderAttack#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#printChessBoard#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#22676#23192#2" expanded="false" />
-            <element signature="e#22835#23105#1" expanded="false" />
+            <element signature="e#6270#6786#2" expanded="false" />
+            <element signature="e#6429#6699#1" expanded="false" />
             <element signature="n#!!block;n#printHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#gradePawnPosition#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#7604#7940#2" expanded="false" />
+            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#8371#8481#1" expanded="false" />
+            <element signature="e#8487#8597#1" expanded="false" />
+            <element signature="e#8785#8939#0" expanded="false" />
+            <element signature="e#8968#9183#0" expanded="false" />
+            <element signature="e#9212#9717#0" expanded="false" />
+            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#10000#10809#1" expanded="false" />
+            <element signature="e#10101#10407#0" expanded="false" />
+            <element signature="e#10440#10746#0" expanded="false" />
+            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11481#11799#2" expanded="false" />
+            <element signature="e#11601#11789#1" expanded="false" />
+            <element signature="e#11633#11775#2" expanded="false" />
+            <element signature="e#11688#11757#1" expanded="false" />
+            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11995#12404#2" expanded="false" />
+            <element signature="e#12445#12535#2" expanded="false" />
+            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#12986#13762#2" expanded="false" />
+            <element signature="e#13805#13893#2" expanded="false" />
+            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#14436#14586#2" expanded="false" />
+            <element signature="e#15992#16473#2" expanded="false" />
+            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#17328#17444#1" expanded="false" />
+            <element signature="e#17514#17632#1" expanded="false" />
+            <element signature="e#17702#17820#1" expanded="false" />
+            <element signature="e#17888#18004#1" expanded="false" />
+            <element signature="e#18029#18476#2" expanded="false" />
+            <element signature="n#!!block;n#getPawnMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#18932#19346#2" expanded="false" />
+            <element signature="e#19431#19831#1" expanded="false" />
+            <element signature="e#19618#19821#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20047#20079#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20249#20339#1" expanded="false" />
+            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20651#20749#1" expanded="false" />
+            <element signature="e#20755#20853#1" expanded="false" />
+            <element signature="n#!!block;n#undo#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBox#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPassantCapture#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23109#23146#1" expanded="false" />
+            <element signature="e#23152#23180#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnsWichCanMove#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23842#23889#1" expanded="false" />
+            <element signature="e#23895#23942#1" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1032,13 +1278,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Chess.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -1090,14 +1329,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instruction.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Move.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1106,20 +1337,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.kt">
+    <entry file="file://$PROJECT_DIR$/src/Chess.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#entryToBox#0" expanded="false" />
-            <element signature="e#1699#1745#1" expanded="false" />
-            <element signature="e#1989#3041#0" expanded="false" />
-            <element signature="e#2302#2368#1" expanded="false" />
-            <element signature="e#3072#3227#0" expanded="false" />
-            <element signature="e#3377#3516#0" expanded="false" />
-            <element signature="e#5360#5552#1" expanded="false" />
-            <element signature="e#5600#5794#1" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instruction.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PawnType.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1131,75 +1369,123 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChessSide.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/common/kotlin/collections/Maps.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="424" column="39" lean-forward="false" selection-start-line="424" selection-start-column="39" selection-end-line="424" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!block;n#entryToBox#0" expanded="false" />
+            <element signature="e#1699#1745#1" expanded="false" />
+            <element signature="e#1989#3041#0" expanded="false" />
+            <element signature="e#2302#2368#1" expanded="false" />
+            <element signature="e#3072#3227#0" expanded="false" />
+            <element signature="e#3377#3516#0" expanded="false" />
+            <element signature="e#3551#4145#0" expanded="false" />
+            <element signature="e#4178#4768#0" expanded="false" />
+            <element signature="e#4801#5868#0" expanded="false" />
+            <element signature="e#5360#5552#1" expanded="false" />
+            <element signature="e#5600#5794#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ChessBoard.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="514" column="129" lean-forward="false" selection-start-line="514" selection-start-column="129" selection-end-line="514" selection-end-column="129" />
+        <state relative-caret-position="2296">
+          <caret line="551" column="4" lean-forward="true" selection-start-line="551" selection-start-column="4" selection-end-line="551" selection-end-column="4" />
           <folding>
             <element signature="e#102#3288#0" expanded="false" />
             <element signature="n#!!block;n#getSideHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#4747#4784#1" expanded="false" />
-            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#move#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#getKingStatus#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKingStatus#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#5648#5694#1" expanded="false" />
-            <element signature="e#5907#6180#2" expanded="false" />
-            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#7391#7727#2" expanded="false" />
-            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8448#8766#2" expanded="false" />
-            <element signature="e#8568#8756#1" expanded="false" />
-            <element signature="e#8600#8742#2" expanded="false" />
-            <element signature="e#8655#8724#1" expanded="false" />
-            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#8962#9371#2" expanded="false" />
-            <element signature="e#9412#9502#2" expanded="false" />
-            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#9953#10729#2" expanded="false" />
-            <element signature="e#10772#10860#2" expanded="false" />
-            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#11403#11549#2" expanded="false" />
-            <element signature="e#12955#13436#2" expanded="false" />
-            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#14291#14407#1" expanded="false" />
-            <element signature="e#14477#14595#1" expanded="false" />
-            <element signature="e#14665#14783#1" expanded="false" />
-            <element signature="e#14851#14967#1" expanded="false" />
-            <element signature="e#14992#15439#2" expanded="false" />
-            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17014#17046#1" expanded="false" />
-            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17216#17306#1" expanded="false" />
-            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#17618#17716#1" expanded="false" />
-            <element signature="e#17722#17820#1" expanded="false" />
-            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#18919#19029#1" expanded="false" />
-            <element signature="e#19035#19145#1" expanded="false" />
-            <element signature="e#19333#19487#0" expanded="false" />
-            <element signature="e#19516#19731#0" expanded="false" />
-            <element signature="e#19760#20265#0" expanded="false" />
-            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#20548#21357#1" expanded="false" />
-            <element signature="e#20649#20955#0" expanded="false" />
-            <element signature="e#20988#21294#0" expanded="false" />
-            <element signature="e#21496#21577#1" expanded="false" />
+            <element signature="e#4860#5133#2" expanded="false" />
+            <element signature="n#!!block;n#cancelLastMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#5377#5458#1" expanded="false" />
+            <element signature="e#5523#5710#1" expanded="false" />
             <element signature="n#!!block;n#switchSidePlaying#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#isPawnUnderAttack#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#printChessBoard#0;n#!!block;n#ChessBoard#0" expanded="false" />
-            <element signature="e#22676#23192#2" expanded="false" />
-            <element signature="e#22835#23105#1" expanded="false" />
+            <element signature="e#6270#6786#2" expanded="false" />
+            <element signature="e#6429#6699#1" expanded="false" />
             <element signature="n#!!block;n#printHistorical#0;n#!!block;n#ChessBoard#0" expanded="false" />
             <element signature="n#!!block;n#gradePawnPosition#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getPawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovesAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#7604#7940#2" expanded="false" />
+            <element signature="n#!!block;n#getCastling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getCastling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#8371#8481#1" expanded="false" />
+            <element signature="e#8487#8597#1" expanded="false" />
+            <element signature="e#8785#8939#0" expanded="false" />
+            <element signature="e#8968#9183#0" expanded="false" />
+            <element signature="e#9212#9717#0" expanded="false" />
+            <element signature="n#!!block;n#castling#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#castling#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#10000#10809#1" expanded="false" />
+            <element signature="e#10101#10407#0" expanded="false" />
+            <element signature="e#10440#10746#0" expanded="false" />
+            <element signature="n#!!block;n#getKing#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getOppositeSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getAllMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11481#11799#2" expanded="false" />
+            <element signature="e#11601#11789#1" expanded="false" />
+            <element signature="e#11633#11775#2" expanded="false" />
+            <element signature="e#11688#11757#1" expanded="false" />
+            <element signature="n#!!block;n#getKingMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#11995#12404#2" expanded="false" />
+            <element signature="e#12445#12535#2" expanded="false" />
+            <element signature="n#!!block;n#movePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getKnightMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#12986#13762#2" expanded="false" />
+            <element signature="e#13805#13893#2" expanded="false" />
+            <element signature="n#!!block;n#getQueenMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBishopMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#14436#14586#2" expanded="false" />
+            <element signature="e#15992#16473#2" expanded="false" />
+            <element signature="n#!!block;n#getRookMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#17328#17444#1" expanded="false" />
+            <element signature="e#17514#17632#1" expanded="false" />
+            <element signature="e#17702#17820#1" expanded="false" />
+            <element signature="e#17888#18004#1" expanded="false" />
+            <element signature="e#18029#18476#2" expanded="false" />
+            <element signature="n#!!block;n#getPawnMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#18932#19346#2" expanded="false" />
+            <element signature="e#19431#19831#1" expanded="false" />
+            <element signature="e#19618#19821#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnLinearFor#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20047#20079#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnMaxForSide#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20249#20339#1" expanded="false" />
+            <element signature="n#!!block;n#getCastlingsTypeAvailable#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#20651#20749#1" expanded="false" />
+            <element signature="e#20755#20853#1" expanded="false" />
+            <element signature="n#!!block;n#undo#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getBox#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#getMovePossibilities#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPassantCapture#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#setDoubleMovePawn#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23109#23146#1" expanded="false" />
+            <element signature="e#23152#23180#1" expanded="false" />
+            <element signature="n#!!block;n#getPawnsWichCanMove#1;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="n#!!block;n#checkPawnDoubleMove#0;n#!!block;n#ChessBoard#0" expanded="false" />
+            <element signature="e#23842#23889#1" expanded="false" />
+            <element signature="e#23895#23942#1" expanded="false" />
           </folding>
         </state>
       </provider>
