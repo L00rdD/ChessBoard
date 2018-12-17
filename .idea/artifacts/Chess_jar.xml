@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="Chess:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Chess_jar</output-path>
     <root id="archive" name="Chess.jar">
-      <element id="module-output" name="Chess" />
+      <element id="module-output" name="ChessBoard" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/mordant-1.2.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-1.2.60.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib-common-1.2.60.jar" path-in-jar="/" />
