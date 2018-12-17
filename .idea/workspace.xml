@@ -6,20 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bae7101e-22ea-4abf-9c5a-0c6b4a9720d6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Chess/MainKt$WhenMappings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GameInteraction.kt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Instruction.kt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ConsoleChess.kt" afterPath="$PROJECT_DIR$/src/Main.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Chess_jar/Chess.jar" afterPath="$PROJECT_DIR$/out/artifacts/Chess_jar/Chess.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Chess/ChessBoard$getKingStatus$1.class" afterPath="$PROJECT_DIR$/out/production/Chess/ChessBoard$getKingStatus$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Chess/ChessBoard$getMovesAvailable$1.class" afterPath="$PROJECT_DIR$/out/production/Chess/ChessBoard$getMovesAvailable$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Chess/ChessBoard.class" afterPath="$PROJECT_DIR$/out/production/Chess/ChessBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Chess/MainKt.class" afterPath="$PROJECT_DIR$/out/production/Chess/MainKt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Chess_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Chess_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="bae7101e-22ea-4abf-9c5a-0c6b4a9720d6" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -545,12 +532,12 @@
       <workItem from="1543568736093" duration="31748000" />
       <workItem from="1543704795689" duration="14618000" />
       <workItem from="1545035552797" duration="3869000" />
-      <workItem from="1545039767378" duration="639000" />
+      <workItem from="1545039767378" duration="777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73417000" />
+    <option name="totallyTimeSpent" value="73555000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -573,7 +560,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3651316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3651316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985258" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
